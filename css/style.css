@@ -233,9 +233,21 @@ span{
     transform: scale(1.02);
 }
 
-.skills-box i{
+.skills-box i {
     font-size: 7rem;
     color: var(--main-color);
+    height: 7rem;
+    line-height: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skills-box i.fa-figma {
+    font-size: 7rem;
+    color: var(--main-color);
+    height: 7rem;
+    line-height: 7rem;
 }
 
 .skills-box h3{
