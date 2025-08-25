@@ -40,9 +40,11 @@ window.onscroll = () => {
     let header = document.querySelector('header');
     header.classList.toggle('sticky', window.scrollY > 100);
 
-    /*============ Remove Toggle Icon Navbar ============*/ 
-    menuIcon.classList.remove('fa-xmark');
-    navbar.classList.remove('active');
+    /*============ Remove Toggle Icon Navbar only on mobile ============*/ 
+    if(window.innerWidth <= 991 && navbar.classList.contains('active')) {
+        menuIcon.classList.remove('fa-xmark');
+        navbar.classList.remove('active');
+    }
 };
 
 /*============ Scroll Reveal ============*/ 
