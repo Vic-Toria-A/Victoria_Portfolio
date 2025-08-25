@@ -1,61 +1,69 @@
-// /*============ Toggle Icon Navbar ============*/
+/*============ Toggle Icon Navbar ============*/
+let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
 
-// let menuIcon = document.querySelector('#menu-icon');
-// let navbar = document.querySelector('.navbar');
+menuIcon.onclick = () => {
+    menuIcon.classList.toggle('fa-xmark');
+    navbar.classList.toggle('active');
+};
 
-// menuIcon.onclick = () => {
-//     menuIcon.classList.toggle('fa-xmark');
-//     navbar.classList.toggle('active')
-// }
-// /* <i class="fa-solid fa-xmark"></i> */
-// /*============ Scroll Section Active Link ============*/
+// Close navbar when a nav link is clicked (mobile UX)
+document.querySelectorAll('.navbar a').forEach(link => {
+    link.addEventListener('click', () => {
+        navbar.classList.remove('active');
+        menuIcon.classList.remove('fa-xmark');
+    });
+});
 
-// let sections = document.querySelectorAll('section');
-// let navLinks = document.querySelectorAll('header nav a');
+/* <i class="fa-solid fa-xmark"></i> */
+/*============ Scroll Section Active Link ============*/
 
-// window.onscroll = () => {
-//     sections.forEach(sec => {
-//         let top = window.scrollY;
-//         let offset = sec.offsetTop - 150;
-//         let height = sec .offsetHeight;
-//         let id = sec.getAttribute('id');
+let sections = document.querySelectorAll('section');
+let navLinks = document.querySelectorAll('header nav a');
 
-//         if(top >= offset && top < offset + height) {
-//             navLinks.forEach(links => {
-//                 links.classList.remove('active');
-//                 document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
-//             });
-//         };
-//     });
+window.onscroll = () => {
+    sections.forEach(sec => {
+        let top = window.scrollY;
+        let offset = sec.offsetTop - 150;
+        let height = sec .offsetHeight;
+        let id = sec.getAttribute('id');
 
-//     /*============ Sticky Navbar ============*/
-//     let header = document.querySelector('header');
-//     header.classList.toggle('sticky', window.scrollY > 100);
+        if(top >= offset && top < offset + height) {
+            navLinks.forEach(links => {
+                links.classList.remove('active');
+                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+            });
+        };
+    });
 
-//     /*============ Remove Toggle Icon Navbar ============*/ 
-//     menuIcon.classList.remove('fa-xmark');
-//     navbar.classList.remove('active');
-// };
+    /*============ Sticky Navbar ============*/
+    let header = document.querySelector('header');
+    header.classList.toggle('sticky', window.scrollY > 100);
 
-// /*============ Scroll Reveal ============*/ 
-// ScrollReveal({
-//     distance: '80px',
-//     duration: 2000,
-//     delay:200,
-// });
+    /*============ Remove Toggle Icon Navbar ============*/ 
+    menuIcon.classList.remove('fa-xmark');
+    navbar.classList.remove('active');
+};
 
-// ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
-// ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin: 'bottom' });
-// ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
-// ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
+/*============ Scroll Reveal ============*/ 
+ScrollReveal({
+    distance: '80px',
+    duration: 2000,
+    delay:200,
+});
 
-// /*============ Typed JS ============*/ 
-// const typed = new Typed('.multiple-text',{
-//     strings: ['Web Developer', 'Frontend Developer', 'Student', 'Pursuing BCA'],
-//     typeSpeed: 70,
-//     backSpeed: 70,
-//     backDelay: 1000,
-//     loop: true,
-// });
+ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
+ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin: 'bottom' });
+ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
+ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
 
-// // Have a great day!
+/*============ Typed JS ============*/ 
+const typed = new Typed('.multiple-text',{
+    strings: ['Web Developer', 'Frontend Developer', 'Student', 'Pursuing BCA'],
+    typeSpeed: 70,
+    backSpeed: 70,
+    backDelay: 1000,
+    loop: true,
+});
+
+// Have a great day!
