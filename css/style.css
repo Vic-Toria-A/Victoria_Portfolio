@@ -627,3 +627,91 @@ margin-bottom: 3rem;
        margin-top: 2rem;
     }
  }
+
+
+ html, body {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+section {
+    scroll-margin-top: 10rem; /* fixes header overlap */
+}
+
+
+@media (max-width: 768px) {
+    .home-img {
+        margin-left: 0 !important;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .navbar {
+        transition: all 0.3s ease;
+    }
+}
+
+a, button {
+    touch-action: manipulation;
+}
+
+@media (min-width: 1600px) {
+    section {
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+}
+
+html {
+    scroll-behavior: auto !important;
+}
+
+
+/* ================= Mobile Skills Section Fix ================= */
+@media (max-width: 768px) {
+    .skills-container {
+        gap: 1.5rem;
+    }
+
+    .skills-container .skills-box {
+        padding: 2rem 1.5rem 2.5rem;
+        border-radius: 1.5rem;
+    }
+
+    .skills-box i {
+        font-size: 5rem;
+        height: 5rem;
+        line-height: 5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .skills-box h3 {
+        font-size: 2.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .skills-box p {
+        font-size: 1.4rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+    }
+
+    .btn-2 {
+        padding: 0.8rem 2rem;
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .skills-container .skills-box {
+        padding: 1.5rem 1.2rem 2rem;
+    }
+
+    .skills-box p {
+        font-size: 1.3rem;
+    }
+}

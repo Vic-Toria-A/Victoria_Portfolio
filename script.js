@@ -68,4 +68,20 @@ const typed = new Typed('.multiple-text',{
     loop: true,
 });
 
+
+document.querySelectorAll('.navbar a').forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href').replace('#', '');
+        const targetSection = document.getElementById(targetId);
+
+        if (targetSection) {
+            window.scrollTo({
+                top: targetSection.offsetTop - 100, // header offset
+                behavior: 'auto' // INSTANT jump, no scroll
+            });
+        }
+    });
+});
 // Have a great day!
